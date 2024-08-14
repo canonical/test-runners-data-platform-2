@@ -14,8 +14,8 @@ settings:
     enhancement: Story
   jira_project_key: DPE  # https://warthogs.atlassian.net/browse/DPE
   status_mapping:
-    opened: Untriaged
-    closed: done
+    opened: untriaged
+    closed: rejected
   add_gh_comment: true
   sync_description: false
   sync_comments: false
