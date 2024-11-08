@@ -8,6 +8,6 @@ jobs:
     name: foo
     runs-on: ubuntu-latest
     steps:
-      - run: echo '${{ github.event.issue.user.name }}'
-      - run: echo '${{ github.event.sender.name }}'
+      - run: echo '${{ github.event.issue.user.login }}'
+      - run: echo '${{ github.event.sender.login }}'
       - run: echo '${{ github.actor }}'
