@@ -8,4 +8,5 @@ jobs:
     name: foo
     runs-on: ubuntu-latest
     steps:
-      - run: echo '${{ github.event.issue.author_association }}'
+      - run: echo '${{ github.event.issue.user.name }}'
+      - run: echo '${{ github.event.sender }}'
