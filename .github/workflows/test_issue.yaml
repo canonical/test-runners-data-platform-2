@@ -9,4 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo '${{ github.event.issue.user.name }}'
-      - run: echo '${{ github.event.sender }}'
+      - run: echo '${{ github.event.sender.name }}'
+      - run: echo '${{ github.actor }}'
