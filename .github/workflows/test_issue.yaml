@@ -1,0 +1,11 @@
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  foo:
+    name: foo
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo '${{ github.event.issue.author_association }}'
