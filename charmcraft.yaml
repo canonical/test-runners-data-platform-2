@@ -26,10 +26,8 @@ parts:
 
       # Use uv to install poetry so that a newer version of Python can be installed if needed by poetry
       curl --proto '=https' --tlsv1.2 -LsSf https://github.com/astral-sh/uv/releases/download/0.5.15/uv-installer.sh | sh  # renovate: charmcraft-uv-latest
-      # poetry 2.0.0 requires Python >=3.9. Install Python >=3.10 if not already available from system
-      # (3.10 is the lowest Python version in an Ubuntu LTS that is >=3.9;
-      # installing >=3.10 instead of >=3.9 reduces number of Python versions we use)
-      "$HOME/.local/bin/uv" tool install -v --python '>=3.10' poetry==2.0.0 --with poetry-plugin-export==1.8.0  # renovate: charmcraft-poetry-latest
+      # poetry 2.0.0 requires Python >=3.9
+      "$HOME/.local/bin/uv" tool install -v --python '>=3.9' poetry==2.0.0 --with poetry-plugin-export==1.8.0  # renovate: charmcraft-poetry-latest
 
       ln -sf "$HOME/.local/bin/poetry" /usr/local/bin/poetry
   # "charm-poetry" part name is arbitrary; use for consistency
