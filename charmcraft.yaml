@@ -54,18 +54,11 @@ parts:
       - poetry-deps
     poetry-export-extra-args: ['--only', 'main,charm-libs']
     build-snaps:
-      - on ubuntu@20.04:
-          - rustup
-      - on ubuntu@22.04:
-          - rustup
+      - rustup
     build-packages:
       - libffi-dev
       - libssl-dev
       - pkg-config
-      - on ubuntu@20.04: []
-      - on ubuntu@22.04: []
-      - else:
-          - rustup
     override-build: |
       rustup --version
       rustup default stable
