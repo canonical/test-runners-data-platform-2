@@ -67,6 +67,7 @@ parts:
       - else:
           - rustup
     override-build: |
+      rustup --version
       rustup default stable
       craftctl default
       # Include requirements.txt in *.charm artifact for easier debugging
