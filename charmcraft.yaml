@@ -60,8 +60,6 @@ parts:
       - libssl-dev
       - pkg-config
     override-build: |
-      /usr/bin/python3 -m pip --version
-      
       rustup default stable
       craftctl default
       # Include requirements.txt in *.charm artifact for easier debugging
