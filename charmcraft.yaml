@@ -64,10 +64,12 @@ parts:
       # archive—which means the rustup version could be updated at any time. Print rustup version
       # to build log to make changes to the snap's rustup version easier to track
       rustup --version
+
       # rpds-py (Python package) >=0.19.0 requires rustc >=1.76, which is not available in the
       # Ubuntu 22.04 archive. Install rustc and cargo using rustup instead of the Ubuntu archive
       rustup set profile minimal
       rustup default 1.83.0  # renovate: charmcraft-rust-latest
+
       craftctl default
       # Include requirements.txt in *.charm artifact for easier debugging
       cp requirements.txt "$CRAFT_PART_INSTALL/requirements.txt"
