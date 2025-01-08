@@ -59,18 +59,12 @@ parts:
       - on ubuntu@22.04:
           - rustup
     build-packages:
-      - on ubuntu@20.04:
-          - libffi-dev
-          - libssl-dev
-          - pkg-config
-      - on ubuntu@22.04:
-          - libffi-dev
-          - libssl-dev
-          - pkg-config
+      - libffi-dev
+      - libssl-dev
+      - pkg-config
+      - on ubuntu@20.04: []
+      - on ubuntu@22.04: []
       - else:
-          - libffi-dev
-          - libssl-dev
-          - pkg-config
           - rustup
     override-build: |
       rustup --version
