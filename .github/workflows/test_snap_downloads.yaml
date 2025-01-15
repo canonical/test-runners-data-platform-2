@@ -5,12 +5,12 @@ jobs:
   bar:
     strategy:
       matrix:
-        foo: [1,2,3,4]
-        bar: [1,2,3]
+        foo: [1,2,3,4,5,6,7,8,9,10]
+        bar: [1,2,3,4,5,6,7,8,9,10]
     runs-on: ubuntu-latest
     steps:
       - run: time curl -s -L -v -o charmed-postgresql_133.snap  https://api.snapcraft.io/api/v1/snaps/download/mAiAP9VqaDs9TXjjb9RpIULHkYwb9IoH_133.snap  > curl_debug.log 2>&1
       - uses: actions/upload-artifact@v4
         with:
-          name: foo-${{ matrix.foo }}-${{ matrix.bar }}
+          name: bar-${{ matrix.foo }}-${{ matrix.bar }}
           path: curl_debug.log
