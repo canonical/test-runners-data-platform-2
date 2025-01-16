@@ -3,7 +3,7 @@
 name: Tests
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}-1
   cancel-in-progress: true
 
 on:
@@ -40,9 +40,14 @@ jobs:
           fail-build: ${{ github.event_name == 'pull_request' }}
 
   build:
-    name: Build charm
+    name: Build charm | ${{ matrix.path }}
+    strategy:
+      matrix:
+        path:
+          - charms/mysql-router-k8s
+          - charms/charm-2
     uses: canonical/data-platform-workflows/.github/workflows/build_charm.yaml@multi-charm-repos
     with:
       cache: false
-      path-to-charm-directory: charms/mysql-router-k8s
+      path-to-charm-directory: ${{ matrix.path }}
       charmcraft-snap-channel: latest/candidate  # TODO: remove after charmcraft 3.3 stable release

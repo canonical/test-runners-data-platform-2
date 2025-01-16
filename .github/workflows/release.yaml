@@ -14,12 +14,17 @@ jobs:
       contents: write  # Needed for Allure Report beta
 
   release:
-    name: Release charm
+    name: Release charm | ${{ matrix.path }}
+    strategy:
+      matrix:
+        path:
+          - charms/mysql-router-k8s
+          - charms/charm-2
     needs:
       - ci-tests
     uses: canonical/data-platform-workflows/.github/workflows/release_charm.yaml@multi-charm-repos
     with:
-      path-to-charm-directory: charms/mysql-router-k8s
+      path-to-charm-directory: ${{ matrix.path }}
       charmcraft-snap-channel: latest/candidate  # TODO: remove after charmcraft 3.3 stable release
       channel: latest/edge
       artifact-prefix: ${{ needs.ci-tests.outputs.artifact-prefix }}
