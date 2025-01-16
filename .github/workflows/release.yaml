@@ -20,7 +20,7 @@ jobs:
     uses: canonical/data-platform-workflows/.github/workflows/release_charm.yaml@multi-charm-repos
     with:
       charmcraft-snap-channel: latest/candidate  # TODO: remove after charmcraft 3.3 stable release
-      channel: 8.0/edge
+      channel: latest/edge
       artifact-prefix: ${{ needs.ci-tests.outputs.artifact-prefix }}
     secrets:
       charmhub-token: ${{ secrets.CHARMHUB_TOKEN }}
