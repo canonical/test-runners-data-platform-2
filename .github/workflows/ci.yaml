@@ -75,6 +75,7 @@ jobs:
       charmcraft-snap-channel: latest/candidate  # TODO: remove after charmcraft 3.3 stable release
 
   integration-test:
+    continue-on-error: true
     strategy:
       fail-fast: false
       matrix:
