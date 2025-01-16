@@ -19,6 +19,7 @@ jobs:
       - ci-tests
     uses: canonical/data-platform-workflows/.github/workflows/release_charm.yaml@multi-charm-repos
     with:
+      path-to-charm-directory: charms/mysql-router-k8s
       charmcraft-snap-channel: latest/candidate  # TODO: remove after charmcraft 3.3 stable release
       channel: latest/edge
       artifact-prefix: ${{ needs.ci-tests.outputs.artifact-prefix }}

@@ -72,4 +72,5 @@ jobs:
     uses: canonical/data-platform-workflows/.github/workflows/build_charm.yaml@multi-charm-repos
     with:
       cache: true
+      path-to-charm-directory: charms/mysql-router-k8s
       charmcraft-snap-channel: latest/candidate  # TODO: remove after charmcraft 3.3 stable release
