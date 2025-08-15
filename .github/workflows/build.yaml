@@ -3,7 +3,7 @@ name: Build & release wheels
 on:
   push:
     branches:
-      - main
+      - main2
   schedule:
     - cron: '53 21 * * *'  # Daily at 21:53 UTC
   workflow_dispatch:
