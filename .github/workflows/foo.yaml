@@ -3,10 +3,6 @@ on:
 
 jobs:
   foo:
-    strategy:
-      matrix:
-        foo: [1,2,3,4]
-        bar: [1,2,3]
-    runs-on: [self-hosted, data-platform, ubuntu, ARM64, 4cpu16ram]
+    runs-on: self-hosted-linux-s390x-noble-medium
     steps:
       - run: echo 'Hello, world!'
